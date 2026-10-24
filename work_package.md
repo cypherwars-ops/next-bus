@@ -17,6 +17,8 @@ Update the timetable:
 Read the trip counts and WARNING lines it prints, and update the test
 expectations if GABS changed the times.
 
+Publish: `git commit -am "..." && git push`. GitHub Actions tests, then deploys (about 30 s).
+
 Run locally: `cd app && python3 -m http.server 8000`, then open http://localhost:8000.
 
 ## Task: Parse GABS PDF to JSON
@@ -46,11 +48,12 @@ Run locally: `cd app && python3 -m http.server 8000`, then open http://localhost
 - Blockers / Notes: started 2026-10-25
 
 ## Task: Host it so the phone can install it
-- Status: pending
+- Status: completed
 - Domain: coding
 - Effort: low
 - Dependencies: choice of host (GitHub Pages / Netlify / home server). Phones need HTTPS to install a PWA.
 - Acceptance Criteria: installed on the user's phone and works in airplane mode
+- Outcome: live at https://cypherwars-ops.github.io/next-bus/ (repo cypherwars-ops/next-bus, public). Every push to main runs test_logic.mjs, then publishes app/. Phone install pending the user's test.
 
 ## Task: Measure terminus -> my stop offset
 - Status: pending
