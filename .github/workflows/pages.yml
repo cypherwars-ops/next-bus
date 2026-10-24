@@ -1,0 +1,36 @@
+# Publishes the app/ folder to GitHub Pages on every push to main.
+name: Deploy app to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:        # allow a manual re-deploy from the Actions tab
+
+permissions:
+  contents: read
+  pages: write              # needed to publish
+  id-token: write           # needed by deploy-pages to prove who it is
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check timetable logic before publishing
+        run: node test_logic.mjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app
+      - id: deployment
+        uses: actions/deploy-pages@v4

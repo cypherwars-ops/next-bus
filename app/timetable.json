@@ -1,0 +1,4193 @@
+{
+ "operator": "Golden Arrow Bus Services",
+ "directions": [
+  {
+   "name": "NYANGA - MOWBRAY - CAPE TOWN",
+   "trips": [
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "05:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "06:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "05:15"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "STEVE BIKO DRV",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "06:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "05:20"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "05:55"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "06:15"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "05:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "06:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      7
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "05:30"
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "06:15"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "05:35"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "06:15"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "05:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "06:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "05:50"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "06:45"
+      }
+     ]
+    },
+    {
+     "days": [
+      7
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "05:50"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "06:25"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "06:50"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "05:55"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "STEVE BIKO DRV",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "07:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:00"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "07:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:00"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "STEVE BIKO DRV",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "07:00"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "07:20"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "06:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "07:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:10"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "07:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:10"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "STEVE BIKO DRV",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "07:45"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:10"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "07:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:15"
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "07:25"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:25"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "07:50"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:25"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:25"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "07:00"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:35"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "07:05"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "07:20"
+      }
+     ]
+    },
+    {
+     "days": [
+      7
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "07:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:45"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "07:20"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:50"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:45"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:45"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "07:20"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:50"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:15"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "06:55"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "STEVE BIKO DRV",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:05"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "07:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "07:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:50"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:05"
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:25"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:05"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:10"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:15"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "08:25"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:25"
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      7
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:35"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "08:10"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "08:15"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "08:15"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:50"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:45"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "08:20"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "07:50"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:20"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "08:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:25"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "08:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:05"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:20"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:05"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "08:40"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:15"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:05"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "08:50"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:10"
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:10"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:35"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:10"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:20"
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:30"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:55"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "09:05"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      7
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "09:15"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:50"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "09:15"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "10:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:45"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "09:15"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "10:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "08:50"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "STEVE BIKO DRV",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:50"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "09:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "09:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "10:15"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "09:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "09:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "09:50"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "09:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "10:05"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "10:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      7
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "09:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "10:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "10:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "10:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "11:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "10:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "10:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "11:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "10:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "10:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "11:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "11:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "11:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "12:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "11:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "11:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "12:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "11:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "11:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "12:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "11:50"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "12:25"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "13:15"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "12:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "12:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "13:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "13:00"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "STEVE BIKO DRV",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "13:30"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "14:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "13:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "13:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "14:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "14:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "14:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "15:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "14:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "14:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "15:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "15:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "15:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "16:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "15:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "16:05"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "16:50"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "15:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "16:05"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "16:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "15:45"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "16:20"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "17:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "16:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "16:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "17:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "16:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "16:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "17:15"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "16:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "17:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "17:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "17:35"
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "18:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "NYANGA TERM",
+       "time": "17:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "N2 FREEWAY",
+       "time": null
+      },
+      {
+       "at": "CAPE TOWN",
+       "time": "18:30"
+      }
+     ]
+    }
+   ],
+   "effective": "2026/10/17",
+   "timetable_number": "0043 01"
+  },
+  {
+   "name": "CAPE TOWN - MOWBRAY - NYANGA",
+   "trips": [
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "06:20"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "07:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "07:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": "07:25"
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "07:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "07:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "08:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "07:10"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "07:35"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "08:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      7
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "07:20"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "08:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "08:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "09:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "09:30"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "09:55"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "10:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "10:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "10:25"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "11:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "10:30"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "10:55"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "11:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "11:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "11:25"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "12:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "11:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "11:25"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "12:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "11:45"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "12:10"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "13:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "12:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "12:25"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "13:20"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "12:30"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "12:55"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "13:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "12:30"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "12:55"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "13:35"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "12:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "13:20"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "13:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "13:55"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "14:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "13:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "14:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "13:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "13:25"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "14:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "13:30"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "14:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "14:50"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "13:40"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "14:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "13:50"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "14:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "14:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "14:25"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "15:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "14:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "14:25"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "15:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "14:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "15:20"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "14:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "14:15"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "14:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "14:15"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "14:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "15:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "14:20"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "15:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "14:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "15:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "14:30"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "14:55"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "14:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": "14:55"
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "15:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "14:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "15:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "14:45"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "14:45"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "15:10"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:15"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "15:00"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "15:45"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "15:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "15:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "15:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "15:25"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "15:15"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "15:45"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "15:15"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "15:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "15:20"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "15:30"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "16:00"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "15:30"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:15"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "15:30"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:15"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "15:30"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "15:55"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "15:30"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "15:55"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": "16:20"
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:05"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "15:30"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "15:30"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "15:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "15:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "15:40"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "15:40"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:25"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "16:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "16:00"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "16:00"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "16:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "16:25"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": "16:50"
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "16:00"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "16:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "16:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "16:25"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": "16:50"
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:15"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "16:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "16:25"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "16:05"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "16:20"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "16:20"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "18:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "16:30"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "18:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "16:30"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "16:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "18:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "16:45"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "18:15"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "17:00"
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "18:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "17:00"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "17:25"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "18:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      6
+     ],
+     "calls": [
+      {
+       "at": "MOWBRAY",
+       "time": "17:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": "17:25"
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "17:35"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "17:15"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "18:30"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "17:15"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": null
+      },
+      {
+       "at": "NY 3",
+       "time": null
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "19:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "17:15"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "17:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "19:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "17:15"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "17:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "18:50"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "17:40"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "GUGULETU",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "18:40"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "18:00"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "19:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "18:00"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "19:00"
+      }
+     ]
+    },
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "18:00"
+      },
+      {
+       "at": "NY 3A",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "19:10"
+      }
+     ]
+    },
+    {
+     "days": [
+      5
+     ],
+     "calls": [
+      {
+       "at": "CAPE TOWN",
+       "time": "18:30"
+      },
+      {
+       "at": "MOWBRAY",
+       "time": "18:55"
+      },
+      {
+       "at": "NY 108",
+       "time": null
+      },
+      {
+       "at": "NYANGA TERM",
+       "time": "19:40"
+      }
+     ]
+    }
+   ],
+   "effective": "2026/10/19",
+   "timetable_number": "0043 02"
+  }
+ ],
+ "source": "NYANGA___CAPE_TOWN_from_20261017_to_20261025_004301.pdf"
+}

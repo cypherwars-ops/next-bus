@@ -1,0 +1,5 @@
+# Local Python environment
+.venv/
+__pycache__/
+# Source PDFs stay local (re-download from gabs.co.za); app/timetable.json is committed
+pdfs/
