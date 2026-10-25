@@ -95,3 +95,29 @@ assert.equal(stats[0].avgAlightLate, 0);
 const gpx = toGPX(fake(6, 32, 7, 56));
 assert.ok(gpx.includes("<trkpt") && gpx.includes("My &#60;stop&#62;"));
 console.log("trip logging tests passed");
+
+// ---- public holidays
+import { easterSunday, saHolidays, serviceDay, holidayName, weeklyValidTo, HOLIDAY } from "./app/logic.js";
+// Known Easter Sundays: 2024-03-31, 2025-04-20, 2026-04-05, 2027-03-28.
+assert.equal(easterSunday(2024).getDate(), 31);
+assert.equal(easterSunday(2025).getMonth(), 3); assert.equal(easterSunday(2025).getDate(), 20);
+assert.equal(easterSunday(2026).getMonth(), 3); assert.equal(easterSunday(2026).getDate(), 5);
+assert.equal(easterSunday(2027).getMonth(), 2); assert.equal(easterSunday(2027).getDate(), 28);
+const h26 = saHolidays(2026);
+assert.equal(h26.get("2026-04-03"), "Good Friday");
+assert.equal(h26.get("2026-04-06"), "Family Day");
+assert.equal(h26.get("2026-08-10"), "National Women's Day (observed)"); // 9 Aug 2026 is a Sunday
+assert.ok(!h26.has("2026-03-23"));                 // 21 Mar 2026 is a Saturday: no shift
+assert.equal(h26.size, 13);
+assert.equal(serviceDay(new Date(2026, 11, 16, 7, 0)), HOLIDAY);  // Wed 16 Dec
+assert.equal(serviceDay(new Date(2026, 9, 26, 7, 0)), 1);         // Mon 26 Oct: normal Monday
+assert.equal(holidayName(new Date(2026, 11, 25)), "Christmas Day");
+
+// Holiday timetable: 14 buses to town, 7 home; none Express.
+rows = plan(toWork, HOLIDAY, { mode: "work", stop: "CAPE TOWN", corridors: all, offset: 0 });
+assert.equal(rows.length, 14);
+assert.equal(plan(toWork, HOLIDAY, { mode: "work", stop: "CAPE TOWN", corridors: all, offset: 0, expressOnly: true }).length, 0);
+assert.equal(plan(home, HOLIDAY, { mode: "home", stop: "CAPE TOWN", corridors: all, offset: 0 }).length, 7);
+
+assert.equal(weeklyValidTo(data.sources), "2026-10-25");
+console.log("holiday tests passed");

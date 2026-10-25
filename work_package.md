@@ -45,7 +45,7 @@ Run locally: `cd app && python3 -m http.server 8000`, then open http://localhost
 - Effort: low
 - Dependencies: none
 - Acceptance Criteria: user confirms times and filters match real buses
-- Blockers / Notes: started 2026-10-25
+- Blockers / Notes: started 2026-10-25. First GPS trip-logging ride: Mon 2026-10-26. Checklist in docs/USER_GUIDE.md (local).
 
 ## Task: Host it so the phone can install it
 - Status: completed
@@ -63,6 +63,15 @@ Run locally: `cd app && python3 -m http.server 8000`, then open http://localhost
 - Acceptance Criteria: tap a bus to log it; mark stops; Got off; history shows scheduled vs actual times; GPX/JSON export; survives a reload
 - Blockers / Notes: a PWA only gets GPS while the screen is on, so it holds a Screen Wake Lock while logging. Data is in IndexedDB on the phone only. Tested headless with faked GPS (start, stop pin, got off, history, resume after reload).
 - Outcome: app/tracker.js (GPS, wake lock, storage) + maths in logic.js (summariseTrip, departureStats, toGPX), with unit tests. The user's field test is pending.
+
+## Task: Public holiday timetable
+- Status: completed
+- Domain: coding
+- Effort: low
+- Dependencies: GABS PH PDFs (NYANGA___CAPE_TOWN___PH_20261104_*)
+- Acceptance Criteria: holiday trips parsed; app switches automatically on SA public holidays; manual "Public holiday" option
+- Blockers / Notes: the _01/_02 files are identical (each holds both directions); the parser skips duplicate sections. Weekly files are named from/to dates, so the app warns once the week has passed. Gazetted one-off holidays go in EXTRA_HOLIDAYS in logic.js.
+- Outcome: holiday = 14 trips to town, 7 home, no Express. Holiday rules from the Public Holidays Act 36 of 1994 (fixed dates, Easter-based days, Sunday -> Monday), unit-tested for 2024-2027.
 
 ## Task: Measure terminus -> my stop offset
 - Status: pending

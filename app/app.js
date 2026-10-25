@@ -1,5 +1,6 @@
 // UI layer: reads settings, asks logic.js for trips, renders the list.
-import { CORRIDORS, plan, fmt, isoDay, summariseTrip, departureStats, toGPX } from "./logic.js";
+import { CORRIDORS, plan, fmt, summariseTrip, departureStats, toGPX,
+  serviceDay, holidayName, weeklyValidTo, ymd, HOLIDAY } from "./logic.js";
 import { store, session, startTrip, resumeTrip, markStop, endTrip, cancelTrip } from "./tracker.js";
 
 // ---- settings (remembered per device; app still works if storage fails)
@@ -78,7 +79,7 @@ function update() {
   if (!data) return;
 
   const now = new Date();
-  const today = isoDay(now);
+  const today = serviceDay(now);         // 8 on a public holiday
   const day = s.day || today;
   const nowMin = s.day && s.day !== today ? -1 : now.getHours() * 60 + now.getMinutes();
   const dir = data.directions[s.mode === "work" ? 0 : 1];
@@ -87,8 +88,9 @@ function update() {
 
   const upcoming = rows.filter((r) => r.board >= nowMin);
   const past = rows.filter((r) => r.board < nowMin);
-  const dayName = ["", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][day];
-  $("sub").textContent = `· ${dayName}`;
+  const dayName = ["", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Public holiday"][day];
+  const hol = !s.day && day === HOLIDAY ? holidayName(now) : null;
+  $("sub").textContent = hol ? `· ${hol} (holiday timetable)` : `· ${dayName}`;
 
   // Big "next bus" card
   const n = upcoming[0];
@@ -114,10 +116,15 @@ function update() {
   $("list").innerHTML = html.join("");
   const more = $("more"); if (more) more.onclick = () => { showPast = true; update(); };
 
-  $("foot").innerHTML =
-    `${esc(dir.name)} · timetable ${esc(dir.timetable_number || "")}, effective ${esc(dir.effective || "?")}.<br>` +
+  // Weekly PDFs carry an end date in their filename; warn once it has passed.
+  const validTo = weeklyValidTo(data.sources);
+  const stale = validTo && ymd(now) > validTo
+    ? `<b>⚠ This timetable was published for the week ending ${validTo}. Check gabs.co.za for a newer one.</b><br>` : "";
+  const eff = (dir.effective || {})[day === HOLIDAY ? "holiday" : "weekly"] || "?";
+  $("foot").innerHTML = stale +
+    `${esc(dir.name)} · timetable ${esc(dir.timetable_number || "")}, effective ${esc(eff)}.<br>` +
     (s.offset ? "~ times are estimates using your offset from the terminus. " : "") +
-    "Times are scheduled, not live. Check public holidays with GABS (0800 656 463).";
+    "Times are scheduled, not live. Public holidays switch to the holiday timetable automatically. GABS: 0800 656 463.";
 }
 
 function tags(r) {

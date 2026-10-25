@@ -1,7 +1,7 @@
 // Service worker: keeps the app usable with no signal.
 // App files: cache-first. timetable.json: network-first, so a new
 // timetable shows up as soon as you're online, else the cached one.
-const CACHE = "nextbus-v5";  // bump when app files change
+const CACHE = "nextbus-v6";  // bump when app files change
 const FILES = ["./", "index.html", "app.js", "logic.js", "tracker.js", "timetable.json",
                "manifest.webmanifest", "icon.svg"];
 

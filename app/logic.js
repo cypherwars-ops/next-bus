@@ -232,3 +232,81 @@ export function toGPX(trip) {
     "",
   ].join("\n");
 }
+
+// ---------------------------------------------------------------------------
+// South African public holidays (Public Holidays Act 36 of 1994).
+// On these days GABS runs its PUBLIC HOLIDAYS timetable, which the parser
+// stores as pseudo-day 8.
+export const HOLIDAY = 8;
+
+const FIXED_HOLIDAYS = [
+  ["01-01", "New Year's Day"], ["03-21", "Human Rights Day"],
+  ["04-27", "Freedom Day"], ["05-01", "Workers' Day"],
+  ["06-16", "Youth Day"], ["08-09", "National Women's Day"],
+  ["09-24", "Heritage Day"], ["12-16", "Day of Reconciliation"],
+  ["12-25", "Christmas Day"], ["12-26", "Day of Goodwill"],
+];
+
+// One-off holidays the President declares (e.g. election days) can't be
+// calculated. Add them here as "YYYY-MM-DD": "name" when they're gazetted.
+export const EXTRA_HOLIDAYS = {};
+
+const ymd = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+
+/** Easter Sunday for a Gregorian year (Anonymous Gregorian algorithm). */
+export function easterSunday(year) {
+  const a = year % 19, b = Math.floor(year / 100), c = year % 100;
+  const d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25);
+  const g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30;
+  const i = Math.floor(c / 4), k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7;
+  const m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const month = Math.floor((h + l - 7 * m + 114) / 31);
+  const day = ((h + l - 7 * m + 114) % 31) + 1;
+  return new Date(year, month - 1, day);
+}
+
+/** Map of "YYYY-MM-DD" -> holiday name for one year. */
+export function saHolidays(year) {
+  const list = new Map();
+  for (const [md, name] of FIXED_HOLIDAYS) list.set(`${year}-${md}`, name);
+  const easter = easterSunday(year);
+  const shift = (days) => new Date(year, easter.getMonth(), easter.getDate() + days);
+  list.set(ymd(shift(-2)), "Good Friday");
+  list.set(ymd(shift(1)), "Family Day");
+  // Section 2(1): a holiday on a Sunday makes the following Monday a holiday.
+  // If that Monday is already a holiday (Christmas on a Sunday) nothing more
+  // is added here; any extra day the government declares goes in EXTRA_HOLIDAYS.
+  for (const [date, name] of [...list]) {
+    const d = new Date(`${date}T12:00:00`);
+    if (d.getDay() !== 0) continue;
+    const monday = ymd(new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1));
+    if (!list.has(monday)) list.set(monday, `${name} (observed)`);
+  }
+  for (const [date, name] of Object.entries(EXTRA_HOLIDAYS)) {
+    if (date.startsWith(`${year}-`)) list.set(date, name);
+  }
+  return list;
+}
+
+/** Holiday name for a JS Date, or null. */
+export function holidayName(date) {
+  return saHolidays(date.getFullYear()).get(ymd(date)) ?? null;
+}
+
+/** Timetable day for a date: ISO weekday 1-7, or HOLIDAY (8). */
+export function serviceDay(date) {
+  return holidayName(date) ? HOLIDAY : isoDay(date);
+}
+
+/**
+ * Latest end date of the weekly timetable files ("YYYY-MM-DD"), or null.
+ * Used to warn when the published timetable may be out of date.
+ */
+export function weeklyValidTo(sources = []) {
+  const ends = sources.filter((s) => s.kind === "weekly" && s.to).map((s) => s.to);
+  return ends.length ? ends.sort().at(-1) : null;
+}
+
+export { ymd };

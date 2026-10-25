@@ -20,8 +20,14 @@ The PDF has no extractable table structure, but `pdftotext -layout`
 keeps the '|' separators and every row has exactly 22 cells, so
 splitting on '|' recovers the columns reliably.
 
+GABS publishes one file per timetable number (e.g. ..._004301 and
+..._004302) but each file holds BOTH directions, so the pair is a
+duplicate. Weekly files are named ..._from_YYYYMMDD_to_YYYYMMDD_...;
+public-holiday files ..._PH_YYYYMMDD_... . Pass any mix of them: trips
+are merged per direction and exact duplicates dropped.
+
 Usage:
-    python3 parse_gabs.py pdfs/<file>.pdf -o app/timetable.json
+    python3 parse_gabs.py pdfs/*.pdf -o app/timetable.json
 """
 
 import argparse
@@ -36,7 +42,11 @@ DAY_GROUPS = {
     "MONDAYS TO FRIDAYS": [1, 2, 3, 4, 5],
     "SATURDAYS": [6],
     "SUNDAYS": [7],
+    "PUBLIC HOLIDAYS": [8],   # 8 = pseudo-day used by the app for holidays
 }
+HOLIDAY_GROUP = "PUBLIC HOLIDAYS"
+FILE_WEEKLY_RE = re.compile(r"_from_(\d{8})_to_(\d{8})_")
+FILE_PH_RE = re.compile(r"_PH_(\d{8})_")
 # Footnote letters printed after a time, narrowing the day group.
 SUFFIX_DAYS = {"a": [1, 2, 3, 4], "b": [5]}
 
@@ -140,28 +150,87 @@ def parse(text):
                 group, days = heading, weekdays
                 meta = META_RE.search(line)
                 if meta and current is not None:
-                    current["effective"] = meta.group(1)
+                    kind = "holiday" if heading == HOLIDAY_GROUP else "weekly"
+                    current.setdefault("effective", {})[kind] = meta.group(1)
                     current["timetable_number"] = meta.group(2).strip()
     flush()
 
     # Order trips by first timed departure so the app needn't sort.
     for d in directions:
-        d["trips"].sort(key=lambda t: to_minutes(
-            next(c["time"] for c in t["calls"] if c["time"])))
+        d["trips"].sort(key=first_time)
     return {"operator": "Golden Arrow Bus Services",
             "directions": directions}, warnings
+
+
+def first_time(trip):
+    """Minutes of the trip's first timed stop (sort key)."""
+    return to_minutes(next(c["time"] for c in trip["calls"] if c["time"]))
+
+
+def iso_date(yyyymmdd):
+    """'20261025' -> '2026-10-25'."""
+    return f"{yyyymmdd[:4]}-{yyyymmdd[4:6]}-{yyyymmdd[6:]}"
+
+
+def source_info(path):
+    """Describe a PDF from its filename: kind and validity dates."""
+    weekly = FILE_WEEKLY_RE.search(path.name)
+    if weekly:
+        return {"file": path.name, "kind": "weekly",
+                "from": iso_date(weekly.group(1)),
+                "to": iso_date(weekly.group(2))}
+    ph = FILE_PH_RE.search(path.name)
+    if ph:
+        return {"file": path.name, "kind": "holiday",
+                "from": iso_date(ph.group(1))}
+    return {"file": path.name, "kind": "unknown"}
+
+
+def merge(parsed):
+    """Merge directions from several parsed files.
+
+    A direction section identical to one already merged (GABS's duplicate
+    _01/_02 files) is skipped as a whole. Individual trips are never
+    de-duplicated: two identical columns can be two real buses.
+
+    parsed: list of (data, warnings) tuples from parse().
+    Returns (directions, number of duplicate sections skipped).
+    """
+    merged = {}          # direction name -> direction dict
+    seen = set()         # fingerprints of direction sections already used
+    dupes = 0
+    for data, _ in parsed:
+        for d in data["directions"]:
+            key = json.dumps([d["name"], d["trips"]], sort_keys=True)
+            if key in seen:
+                dupes += 1
+                continue
+            seen.add(key)
+            target = merged.setdefault(d["name"], {
+                "name": d["name"], "effective": {}, "trips": []})
+            target["effective"].update(d.get("effective", {}))
+            if "timetable_number" in d:
+                target["timetable_number"] = d["timetable_number"]
+            target["trips"].extend(d["trips"])
+    for d in merged.values():
+        d["trips"].sort(key=first_time)
+    return list(merged.values()), dupes
 
 
 def main():
     """Command-line entry point."""
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("pdf", type=Path)
+    ap.add_argument("pdf", type=Path, nargs="+")
     ap.add_argument("-o", "--output", type=Path, default=None,
                     help="write JSON here (default: stdout)")
     args = ap.parse_args()
 
-    data, warnings = parse(pdf_to_text(args.pdf))
-    data["source"] = args.pdf.name
+    parsed = [parse(pdf_to_text(pdf)) for pdf in args.pdf]
+    directions, dupes = merge(parsed)
+    warnings = sorted({w for _, ws in parsed for w in ws})
+    data = {"operator": "Golden Arrow Bus Services",
+            "sources": [source_info(pdf) for pdf in args.pdf],
+            "directions": directions}
     out = json.dumps(data, indent=1)
     if args.output:
         args.output.write_text(out + "\n")
@@ -169,7 +238,15 @@ def main():
         print(out)
 
     for d in data["directions"]:
-        print(f"{len(d['trips']):4d} trips  {d['name']}", file=sys.stderr)
+        groups = {}
+        for trip in d["trips"]:
+            kind = "holiday" if trip["days"] == [8] else "weekly"
+            groups[kind] = groups.get(kind, 0) + 1
+        print(f"{len(d['trips']):4d} trips  {d['name']}  {groups}",
+              file=sys.stderr)
+    if dupes:
+        print(f"     ({dupes} duplicate direction sections skipped: same "
+              "timetable in more than one file)", file=sys.stderr)
     for w in warnings:
         print("WARNING:", w, file=sys.stderr)
 
