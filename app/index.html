@@ -22,6 +22,7 @@
       }
     }
     * { box-sizing: border-box; }
+    [hidden] { display: none !important; }  /* beat .logbar's display:grid */
     body {
       margin: 0; background: var(--bg); color: var(--ink);
       font: 16px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -69,12 +70,37 @@
     .via { grid-column: 2 / 4; color: var(--muted); font-size: .8rem; }
     .note { color: var(--muted); font-size: .8rem; margin: 12px 2px; }
     .empty { padding: 18px 14px; color: var(--muted); }
+    .top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .logbar {
+      position: sticky; top: 0; z-index: 5; margin: 0 -16px 12px; padding: 10px 16px;
+      background: var(--soon); color: #fff; display: grid; gap: 8px;
+    }
+    .logbar .stat { font-size: .9rem; font-variant-numeric: tabular-nums; }
+    .logbar .row button { border: 0; border-radius: 10px; padding: 9px 14px; font: inherit; font-weight: 600; }
+    .logbar .pin { background: #fff; color: var(--soon); flex: 1; }
+    .logbar .off { background: #1d1d1b; color: #fff; flex: 1; }
+    .logbar .x { background: transparent; color: #fff; border: 1px solid #fff8 !important; }
+    .trip { cursor: pointer; }
+    h2 { font-size: 1rem; margin: 18px 2px 8px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+    .logged { padding: 11px 14px; border-top: 1px solid var(--line); display: grid; gap: 4px; }
+    .logged:first-child { border-top: 0; }
+    .logged .meta { color: var(--muted); font-size: .8rem; }
+    .logged .acts { display: flex; gap: 6px; }
+    .late { color: var(--soon); font-weight: 600; }
+    .early { color: var(--accent); font-weight: 600; }
     button.link { background: none; border: 0; color: var(--accent); font: inherit; padding: 10px 14px; width: 100%; text-align: left; }
   </style>
 </head>
 <body>
 <main>
-  <h1>Next Bus <span id="sub" style="color:var(--muted);font-weight:400;font-size:.9rem"></span></h1>
+  <div id="logbar" class="logbar" hidden></div>
+  <div class="top">
+    <h1>Next Bus <span id="sub" style="color:var(--muted);font-weight:400;font-size:.9rem"></span></h1>
+    <button class="chip" id="tripsBtn">My trips</button>
+  </div>
+
+  <div id="planner">
 
   <div class="seg" id="mode">
     <button data-v="work">To work</button>
@@ -107,6 +133,10 @@
   <section id="next"></section>
   <section class="list" id="list"></section>
   <p class="note" id="foot"></p>
+  <p class="note">Tap a bus to log your trip with GPS.</p>
+  </div>
+
+  <div id="tripsView" hidden></div>
 </main>
 <script type="module" src="app.js"></script>
 </body>

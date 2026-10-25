@@ -120,3 +120,115 @@ export function plan(direction, day, opts) {
   }
   return rows.sort((a, b) => a.board - b.board);
 }
+
+// ---------------------------------------------------------------------------
+// Trip logging maths (GPS logs recorded on the phone; see tracker.js).
+// A logged trip:
+//   { id, dir: "work"|"home", sched: { board, alight, express, corridors } | null,
+//     start, end (epoch ms), points: [[t, lat, lon, accuracy_m]],
+//     marks: [{ t, lat, lon, label }], gaps: [{ from, to }] }
+
+const EARTH_R = 6371000; // mean Earth radius, metres
+
+/** Great-circle distance in metres between two lat/lon points (haversine). */
+export function distanceM(lat1, lon1, lat2, lon2) {
+  const rad = Math.PI / 180;
+  const dLat = (lat2 - lat1) * rad;
+  const dLon = (lon2 - lon1) * rad;
+  const a = Math.sin(dLat / 2) ** 2
+    + Math.cos(lat1 * rad) * Math.cos(lat2 * rad) * Math.sin(dLon / 2) ** 2;
+  return 2 * EARTH_R * Math.asin(Math.sqrt(a));
+}
+
+/**
+ * Decide whether a new GPS fix is worth storing.
+ * Keeps a point every `everyMs`, or sooner if we moved `everyM` metres.
+ * Drops fixes too inaccurate to be useful.
+ */
+export function keepPoint(last, fix, everyMs = 5000, everyM = 25, maxAcc = 150) {
+  if (fix[3] > maxAcc) return false;
+  if (!last) return true;
+  return fix[0] - last[0] >= everyMs
+    || distanceM(last[1], last[2], fix[1], fix[2]) >= everyM;
+}
+
+/** minutes after midnight (local) for an epoch-ms time. */
+export function minOfDay(ms) {
+  const d = new Date(ms);
+  return d.getHours() * 60 + d.getMinutes() + d.getSeconds() / 60;
+}
+
+/**
+ * Summarise one logged trip.
+ * Returns { durationMin, distanceKm, boardLate, alightLate, gapMin }
+ * where *Late are minutes vs the timetable (+ late, - early, null if unknown).
+ */
+export function summariseTrip(trip) {
+  let dist = 0;
+  for (let i = 1; i < trip.points.length; i++) {
+    const [, la1, lo1] = trip.points[i - 1];
+    const [, la2, lo2] = trip.points[i];
+    dist += distanceM(la1, lo1, la2, lo2);
+  }
+  const end = trip.end ?? trip.points.at(-1)?.[0] ?? trip.start;
+  const s = trip.sched;
+  const late = (ms, hhmm) => (s && hhmm ? Math.round(minOfDay(ms) - toMin(hhmm)) : null);
+  return {
+    durationMin: Math.round((end - trip.start) / 60000),
+    distanceKm: Math.round(dist / 100) / 10,
+    boardLate: late(trip.start, s?.board),
+    alightLate: trip.end ? late(trip.end, s?.alight) : null,
+    gapMin: Math.round((trip.gaps || []).reduce((m, g) => m + (g.to - g.from), 0) / 60000),
+  };
+}
+
+/**
+ * Group finished trips by scheduled departure and average them.
+ * Returns [{ key, dir, board, express, n, avgDuration, avgArrive, avgAlightLate }]
+ * sorted by direction then departure time. avgArrive is "HH:MM".
+ */
+export function departureStats(trips) {
+  const groups = new Map();
+  for (const t of trips) {
+    if (!t.sched || !t.end) continue;
+    const key = `${t.dir} ${t.sched.board}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(t);
+  }
+  const avg = (xs) => xs.reduce((a, b) => a + b, 0) / xs.length;
+  return [...groups.entries()].map(([key, ts]) => {
+    const sums = ts.map(summariseTrip);
+    const lates = sums.map((x) => x.alightLate).filter((x) => x !== null);
+    return {
+      key,
+      dir: ts[0].dir,
+      board: ts[0].sched.board,
+      express: ts.some((t) => t.sched.express),
+      n: ts.length,
+      avgDuration: Math.round(avg(sums.map((x) => x.durationMin))),
+      avgArrive: fmt(Math.round(avg(ts.map((t) => minOfDay(t.end))))),
+      avgAlightLate: lates.length ? Math.round(avg(lates)) : null,
+    };
+  }).sort((a, b) => a.dir.localeCompare(b.dir) || toMin(a.board) - toMin(b.board));
+}
+
+/** GPX 1.1 text for one trip: the track plus stop marks as waypoints. */
+export function toGPX(trip) {
+  const iso = (ms) => new Date(ms).toISOString();
+  const x = (s) => String(s).replace(/[<>&"]/g, (c) => `&#${c.charCodeAt(0)};`);
+  const name = trip.sched ? `${trip.dir} ${trip.sched.board}` : `${trip.dir} unscheduled`;
+  const wpts = trip.marks.map((m) =>
+    `  <wpt lat="${m.lat}" lon="${m.lon}"><time>${iso(m.t)}</time><name>${x(m.label)}</name></wpt>`);
+  const trkpts = trip.points.map(([t, la, lo]) =>
+    `      <trkpt lat="${la}" lon="${lo}"><time>${iso(t)}</time></trkpt>`);
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<gpx version="1.1" creator="Next Bus" xmlns="http://www.topografix.com/GPX/1/1">',
+    ...wpts,
+    `  <trk><name>${x(name)} ${iso(trip.start).slice(0, 10)}</name><trkseg>`,
+    ...trkpts,
+    "  </trkseg></trk>",
+    "</gpx>",
+    "",
+  ].join("\n");
+}

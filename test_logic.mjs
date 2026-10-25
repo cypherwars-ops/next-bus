@@ -56,3 +56,42 @@ for (const d of [1, 5]) {
   assert.ok(rows.some((r) => fmt(r.board) === "15:30" && fmt(r.alight) === "16:15"), `day ${d}`);
 }
 console.log("homebound tests passed");
+
+// ---- trip logging maths
+import { distanceM, keepPoint, summariseTrip, departureStats, toGPX } from "./app/logic.js";
+
+// Nyanga terminus -> Cape Town is roughly 17 km as the crow flies.
+const d = distanceM(-33.9946, 18.5803, -33.9249, 18.4241);
+assert.ok(d > 15000 && d < 19000, `distance ${d}`);
+
+// keepPoint: drop inaccurate, keep after 5 s or 25 m.
+const p0 = [0, -33.99, 18.58, 10];
+assert.equal(keepPoint(null, p0), true);
+assert.equal(keepPoint(p0, [2000, -33.99, 18.58, 10]), false);      // too soon, not moved
+assert.equal(keepPoint(p0, [6000, -33.99, 18.58, 10]), true);       // 6 s later
+assert.equal(keepPoint(p0, [1000, -33.9897, 18.58, 10]), true);     // ~33 m moved
+assert.equal(keepPoint(p0, [9000, -33.99, 18.58, 400]), false);     // poor accuracy
+
+// A fake logged trip: scheduled 06:30 -> 08:00, boarded 06:32, off 07:56.
+const at = (h, m) => new Date(2026, 9, 27, h, m).getTime();
+const fake = (h1, m1, h2, m2) => ({
+  id: "x", dir: "work",
+  sched: { board: "06:30", alight: "08:00", express: true, corridors: ["NY 108"] },
+  start: at(h1, m1), end: at(h2, m2),
+  points: [[at(h1, m1), -33.9946, 18.5803, 8], [at(h2, m2), -33.9249, 18.4241, 8]],
+  marks: [{ t: at(7, 0), lat: -33.98, lon: 18.55, label: "My <stop>" }], gaps: [],
+});
+const sum = summariseTrip(fake(6, 32, 7, 56));
+assert.equal(sum.durationMin, 84);
+assert.equal(sum.boardLate, 2);
+assert.equal(sum.alightLate, -4);
+
+const stats = departureStats([fake(6, 32, 7, 56), fake(6, 30, 8, 4)]);
+assert.equal(stats.length, 1);
+assert.equal(stats[0].n, 2);
+assert.equal(stats[0].avgArrive, "08:00");
+assert.equal(stats[0].avgAlightLate, 0);
+
+const gpx = toGPX(fake(6, 32, 7, 56));
+assert.ok(gpx.includes("<trkpt") && gpx.includes("My &#60;stop&#62;"));
+console.log("trip logging tests passed");

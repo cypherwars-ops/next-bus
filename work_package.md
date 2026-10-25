@@ -55,6 +55,15 @@ Run locally: `cd app && python3 -m http.server 8000`, then open http://localhost
 - Acceptance Criteria: installed on the user's phone and works in airplane mode
 - Outcome: live at https://cypherwars-ops.github.io/next-bus/ (repo cypherwars-ops/next-bus, public). Every push to main runs test_logic.mjs, then publishes app/. Phone install pending the user's test.
 
+## Task: Trip logging with GPS (roadmap 3a)
+- Status: completed
+- Domain: coding
+- Effort: medium
+- Dependencies: HTTPS hosting (geolocation needs it), Android Chrome
+- Acceptance Criteria: tap a bus to log it; mark stops; Got off; history shows scheduled vs actual times; GPX/JSON export; survives a reload
+- Blockers / Notes: a PWA only gets GPS while the screen is on, so it holds a Screen Wake Lock while logging. Data is in IndexedDB on the phone only. Tested headless with faked GPS (start, stop pin, got off, history, resume after reload).
+- Outcome: app/tracker.js (GPS, wake lock, storage) + maths in logic.js (summariseTrip, departureStats, toGPX), with unit tests. The user's field test is pending.
+
 ## Task: Measure terminus -> my stop offset
 - Status: pending
 - Domain: coding

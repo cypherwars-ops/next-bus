@@ -1,5 +1,6 @@
 // UI layer: reads settings, asks logic.js for trips, renders the list.
-import { CORRIDORS, plan, fmt, isoDay } from "./logic.js";
+import { CORRIDORS, plan, fmt, isoDay, summariseTrip, departureStats, toGPX } from "./logic.js";
+import { store, session, startTrip, resumeTrip, markStop, endTrip, cancelTrip } from "./tracker.js";
 
 // ---- settings (remembered per device; app still works if storage fails)
 const DEFAULTS = {
@@ -18,6 +19,7 @@ const save = () => { try { localStorage.setItem("nextbus", JSON.stringify(s)); }
 
 let data = null;
 let showPast = false;
+let shown = [];          // rows currently listed, so a tap can find its trip
 const $ = (id) => document.getElementById(id);
 
 // ---- controls
@@ -106,7 +108,8 @@ function update() {
   // Full list
   const html = [];
   if (past.length && !showPast) html.push(`<button class="link" id="more">Show ${past.length} earlier</button>`);
-  for (const r of showPast ? rows : upcoming) html.push(tripRow(r, r.board < nowMin, stop));
+  shown = showPast ? rows : upcoming;
+  shown.forEach((r, i) => html.push(tripRow(r, r.board < nowMin, stop, i)));
   if (!rows.length) html.push(`<div class="empty">No buses on these routes for ${dayName}.</div>`);
   $("list").innerHTML = html.join("");
   const more = $("more"); if (more) more.onclick = () => { showPast = true; update(); };
@@ -139,11 +142,11 @@ function arrivalText(r, stop) {
   return `home ${r.alightExact ? "" : "~"}${fmt(r.alight)}`;
 }
 
-function tripRow(r, isPast, stop) {
+function tripRow(r, isPast, stop, i) {
   const roads = r.trip.calls.filter((c) => !c.time).map((c) => title(c.at)).join(", ");
   const note = !r.boardExact && s.mode === "home"
     ? `No time printed at ${title(stop)}; shown time is the first timed stop. ` : "";
-  return `<div class="trip${isPast ? " past" : ""}">
+  return `<div class="trip${isPast ? " past" : ""}" data-i="${i}">
     <div class="t">${fmt(r.board)}${r.boardExact ? "" : "~"}</div>
     <div>${tags(r)}</div>
     <div class="arr">${arrivalText(r, stop)}</div>
@@ -151,9 +154,143 @@ function tripRow(r, isPast, stop) {
   </div>`;
 }
 
+// ---- trip logging UI -------------------------------------------------------
+// Tap a bus in the list -> confirm -> start logging that scheduled trip.
+$("list").addEventListener("click", async (e) => {
+  const el = e.target.closest(".trip"); if (!el) return;
+  const r = shown[Number(el.dataset.i)]; if (!r) return;
+  if (session.trip) { alert("Already logging a trip. Tap 'Got off' first."); return; }
+  const label = `${fmt(r.board)} ${s.mode === "work" ? "to work" : "home"}`;
+  if (!confirm(`Log your trip on the ${label} bus?\n\nTap this when you board. The screen will stay on while logging.`)) return;
+  await startTrip(s.mode, {
+    board: fmt(r.board),
+    alight: r.alight !== null ? fmt(r.alight) : null,
+    express: r.express,
+    corridors: r.corridors,
+  });
+});
+
+function renderLogbar() {
+  const tr = session.trip;
+  $("logbar").hidden = !tr;
+  if (!tr) return;
+  const mins = Math.floor((Date.now() - tr.start) / 60000);
+  const fix = session.lastFix;
+  const gps = fix ? `GPS ±${fix[3]} m` : "waiting for GPS…";
+  const what = tr.sched ? `${tr.sched.board} bus` : "unscheduled trip";
+  $("logbar").innerHTML = `
+    <div class="stat"><b>● Logging ${esc(what)}</b> · ${mins} min · ${tr.points.length} pts · ${tr.marks.length} stop${tr.marks.length === 1 ? "" : "s"} · ${gps}</div>
+    <div class="row">
+      <button class="pin" id="pinBtn">📍 Stop here</button>
+      <button class="off" id="offBtn">Got off</button>
+      <button class="x" id="xBtn" title="Discard">✕</button>
+    </div>`;
+  $("pinBtn").onclick = async () => {
+    const name = prompt("Name this stop (optional):", "");
+    if (name === null) return;
+    if (!(await markStop(name.trim()))) alert("No GPS fix yet. Try again in a moment.");
+    renderLogbar();
+  };
+  $("offBtn").onclick = async () => { await endTrip(); if (!$("tripsView").hidden) renderTrips(); };
+  $("xBtn").onclick = async () => { if (confirm("Discard this trip log?")) await cancelTrip(); };
+}
+session.onChange(renderLogbar);
+setInterval(() => session.trip && renderLogbar(), 15_000); // tick the minute counter
+
+// ---- "My trips" screen
+$("tripsBtn").onclick = () => {
+  const open = $("tripsView").hidden;
+  $("tripsView").hidden = !open;
+  $("planner").hidden = open;
+  $("tripsBtn").textContent = open ? "Timetable" : "My trips";
+  if (open) renderTrips();
+};
+
+const signed = (n) => (n === null ? "" : n > 0 ? `<span class="late">+${n} min</span>`
+  : n < 0 ? `<span class="early">${n} min</span>` : "on time");
+
+async function renderTrips() {
+  const trips = (await store.all()).filter((t) => t.end).sort((a, b) => b.start - a.start);
+  const stats = departureStats(trips);
+  const dirName = (d) => (d === "work" ? "To work" : "Home");
+  const html = [];
+
+  html.push(`<h2>Usual times</h2><div class="card">`);
+  if (!stats.length) html.push(`<div class="empty">Log a few trips and averages per departure appear here.</div>`);
+  for (const st of stats) {
+    html.push(`<div class="logged">
+      <div><b>${dirName(st.dir)} ${st.board}</b> ${st.express ? '<span class="tag x">Express</span>' : ""}
+        <span class="meta">· ${st.n} trip${st.n > 1 ? "s" : ""}</span></div>
+      <div class="meta">Usually arrives <b>${st.avgArrive}</b> ${st.avgAlightLate !== null ? `(${signed(st.avgAlightLate)} vs timetable)` : ""} · ${st.avgDuration} min on the bus</div>
+    </div>`);
+  }
+  html.push(`</div>`);
+
+  html.push(`<h2>Logged trips</h2><div class="card">`);
+  if (!trips.length) html.push(`<div class="empty">No trips yet. In the timetable, tap the bus you're boarding.</div>`);
+  for (const tr of trips) {
+    const sm = summariseTrip(tr);
+    const day = new Date(tr.start).toLocaleDateString("en-ZA", { weekday: "short", day: "numeric", month: "short" });
+    const clock = (ms) => new Date(ms).toLocaleTimeString("en-ZA", { hour: "2-digit", minute: "2-digit" });
+    html.push(`<div class="logged">
+      <div><b>${day}</b> · ${dirName(tr.dir)} ${tr.sched ? esc(tr.sched.board) : "(unscheduled)"}</div>
+      <div class="meta">Boarded ${clock(tr.start)} ${signed(sm.boardLate)} · off ${clock(tr.end)} ${signed(sm.alightLate)}</div>
+      <div class="meta">${sm.durationMin} min · ${sm.distanceKm} km · ${tr.points.length} pts · ${tr.marks.length} stop${tr.marks.length === 1 ? "" : "s"}${sm.gapMin ? ` · ${sm.gapMin} min GPS gap` : ""}</div>
+      <div class="acts">
+        <button class="chip" data-gpx="${esc(tr.id)}">GPX</button>
+        <button class="chip" data-del="${esc(tr.id)}">Delete</button>
+      </div>
+    </div>`);
+  }
+  html.push(`</div>`);
+
+  html.push(`<h2>Backup</h2><div class="row">
+    <button class="chip" id="unschedBtn">Log trip without timetable</button>
+    <button class="chip" id="exportBtn">Export all (JSON)</button>
+    <label class="chip">Import<input id="importIn" type="file" accept=".json,application/json" hidden></label>
+  </div>
+  <p class="note">Trips are stored only on this phone. Export a backup now and then: uninstalling the app or clearing Chrome's data deletes them.</p>`);
+
+  $("tripsView").innerHTML = html.join("");
+  $("tripsView").onclick = async (e) => {
+    const g = e.target.dataset.gpx, d = e.target.dataset.del;
+    if (g) {
+      const tr = trips.find((x) => x.id === g);
+      download(`nextbus-${tr.id.slice(0, 16).replace(/[:T]/g, "-")}.gpx`, toGPX(tr), "application/gpx+xml");
+    } else if (d && confirm("Delete this trip log?")) {
+      await store.delete(d); renderTrips();
+    }
+  };
+  $("unschedBtn").onclick = async () => {
+    if (session.trip) { alert("Already logging a trip."); return; }
+    if (confirm(`Start logging an unscheduled ${s.mode === "work" ? "to-work" : "home"} trip now?`)) await startTrip(s.mode, null);
+  };
+  $("exportBtn").onclick = async () => {
+    const all = await store.all();
+    download(`nextbus-trips-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(all), "application/json");
+  };
+  $("importIn").onchange = async (e) => {
+    const file = e.target.files[0]; if (!file) return;
+    try {
+      const list = JSON.parse(await file.text());
+      for (const tr of list) if (tr.id && tr.points) await store.put(tr);
+      alert(`Imported ${list.length} trips.`);
+    } catch { alert("That file isn't a Next Bus backup."); }
+    renderTrips();
+  };
+}
+
+function download(name, text, type) {
+  const url = URL.createObjectURL(new Blob([text], { type }));
+  const link = Object.assign(document.createElement("a"), { href: url, download: name });
+  document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
 // ---- data + offline
 try { data = await (await fetch("timetable.json")).json(); } catch { /* offline + no cache */ }
 update();
+resumeTrip().catch(() => {});
 setInterval(update, 30_000); // keep the countdown fresh
 
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
